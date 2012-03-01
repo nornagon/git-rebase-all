@@ -1,4 +1,11 @@
-git-rebase-all is my solution to
+Usage:
+
+    # rebase mybranch and all its children onto origin/master
+    git rebase-all origin/master mybranch
+    # if you need to resolve a conflict, resolve it and run
+    git rebase-all --continue # (or --skip, or --abort: these flags will be passed through to the underlying `git rebase`)
+
+`git-rebase-all` is my solution to
 [this StackOverflow
 question](http://stackoverflow.com/questions/9407234/git-maintaining-many-topic-branches-on-a-frequently-moving-base), pasted here for convenience.
 
