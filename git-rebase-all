@@ -12,7 +12,7 @@ abort!          abort and check out the original branch
 skip!           skip current patch and continue
 "
 
-. git-sh-setup
+. "$(git --exec-path)/git-sh-setup"
 require_work_tree_exists
 cd_to_toplevel
 
