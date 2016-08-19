@@ -64,7 +64,7 @@ if [ $# -eq 2 ]; then
   git update-ref refs/hidden/octomerge $octomerge || die "couldn't branch"
 
   # The money shot: rebase the octomerge onto the new upstream.
-  git rebase --preserve-merges $new_upstream refs/hidden/octomerge ||
+  git rebase --preserve-merges $root refs/hidden/octomerge --onto $new_upstream ||
     exit $? # if the rebase drops to shell, stop here.
 else
   [ x$action = x ] && usage
