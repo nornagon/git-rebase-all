@@ -45,7 +45,7 @@ if [ $# -eq 2 ]; then
   root=$2
 
   # Fetch all the branches that contain the root of the subtree
-  branches=$(git branch --contains $root | cut -c 3-)
+  branches=$(git for-each-ref --contains $root --no-merged $new_upstream --format='%(refname:strip=2)' refs/heads/)
 
   echo rebasing $branches onto $new_upstream
 
